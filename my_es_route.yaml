@@ -1,0 +1,74 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: elasticsearch
+  namespace: openshift-logging
+spec:
+  host:
+  to:
+    kind: Service
+    name: elasticsearch
+  tls:
+    termination: reencrypt
+    caCertificate: |-
+      -----BEGIN CERTIFICATE-----
+      MIIFKTCCAxGgAwIBAgIJAJO7TXsoCd+lMA0GCSqGSIb3DQEBCwUAMCsxKTAnBgNV
+      BAMMIG9wZW5zaGlmdC1jbHVzdGVyLWxvZ2dpbmctc2lnbmVyMB4XDTE5MDUwNzAx
+      NTE1MloXDTI0MDUwNTAxNTE1MlowKzEpMCcGA1UEAwwgb3BlbnNoaWZ0LWNsdXN0
+      ZXItbG9nZ2luZy1zaWduZXIwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoIC
+      AQDHZj69juii3jQ3wUgWaF5TWpt5uqlQ0PnkZoiPGc+ztLU4k7Iz/lE1KJXEjaUv
+      loymcW+AZ6c3DUIaVTnkQ7NgTBveJfAy6lMcEWYADT5N5EqxdJVBXd/90vKzJay7
+      rxQn4zdp4bqGG7VGOEFDvqtBpoVKMxx8oRZ6uO8qLhg9/SPp7YFChVUtCh2z5P3I
+      jnGUQfYsm2GLnFtJwImYmPH5YmJA37LYpQjjEGXtbZosw87A/IS51RBCaHYswexl
+      4FQPrHzYmicEafyMSYXPNuo+UIKJwfPrTeZ/tCZoo3RSo1k380fPsoIxoHSOA1q3
+      Rly4NANUi54aY46RfMKNmRI5W41vsRw8Un2MtSLTPafeA9KCI+YK4qqqH9HjBWpz
+      sqU0OOZMXzOTFEfuud40iStnHMg34TOHCLVZEjzwNq/y8T9LZwkmIzFFqSPYc/1c
+      woITN+nKOMS2DtGrcdKofFm767P2+t7nk5mOZE007apNAeKuFsgxM8MOiO3WfAA7
+      fb3j1XbSctZ5Twv/xCTysj22lXSJbghxHX44g+RQlgIA4d7B9MpuvlGL+VQnMWmU
+      AsVCtzjiRdRggfA8ixr1to6cgFAomAX+dyGMRIpz6EjobHa2o9i5GnX+tLA1SvTH
+      vndITX+buN4azHx6E5zJgwTAV4zC/D03RFWjGLS+JYZsRQIDAQABo1AwTjAdBgNV
+      HQ4EFgQUjpCLv0te+yB7Q5XCpHQqhu9vBn0wHwYDVR0jBBgwFoAUjpCLv0te+yB7
+      Q5XCpHQqhu9vBn0wDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEArJbT
+      YbB4Q/RD+Z5e0G3TVRGzvCtc2Y3ETvIirUYJuziEO7aS66BLlyo+TOAgZw8LfFYt
+      9/UO5Gd0pPVNgwZ/A9Zckw2BJX9CG5XbL1ZirQ8/8iwPhi1aEyWnqUeFyojqIQb0
+      qJQYEz9SZkradfd7Za+7b4mwQ0GFDEr5URMaFCrode7OXu8OMfGkVcVl14UzRkQv
+      9QTD9omTzxbP5UZwGMOcnQiPVb4p0GHXmUmdO4crnuyzt5S1pDhmYXe9ozgmZny9
+      qdX7L70odLRNz3Wl99iszm1mGYH9YzVYJwwQ3dGlNF9rr8uC87lSlWS7kXnZmwbV
+      IBceWdOPm3aoISGygGW5ejvGSJmnv5iLRZfHmEkQAsCNDF4lxSkMprU8lBeeXRuP
+      zDjPsbfnV/+REVhoYCaI12mD+8Np+iEw+/zrI0zIqfo/36EsLg4UMaVcB3lBCgQ7
+      7uIv8JLUO0Vj0y/E1OSfA00VPAvUQWYg7oh4+pR+DuV81qPtOg7yT8fS7Yw5GJ4l
+      JoWbYDKv0TUo9USUz8SAXCGBmy1oLxhZ5JAtMzUzDkYdWzDUYshm5vWxyRi59IZ0
+      5UyK8k0G44OVd0ILrOsjSlO5IsQ8PvVJOUgNbX9AvB0/tacK7sUprj0mvc1OfTQg
+      9Vx33p+p9uZywoJgtDqNC+VMn+EKHdMaLD1d7Bc=
+      -----END CERTIFICATE-----
+    destinationCACertificate: |-
+      -----BEGIN CERTIFICATE-----
+      MIIFKTCCAxGgAwIBAgIJAJO7TXsoCd+lMA0GCSqGSIb3DQEBCwUAMCsxKTAnBgNV
+      BAMMIG9wZW5zaGlmdC1jbHVzdGVyLWxvZ2dpbmctc2lnbmVyMB4XDTE5MDUwNzAx
+      NTE1MloXDTI0MDUwNTAxNTE1MlowKzEpMCcGA1UEAwwgb3BlbnNoaWZ0LWNsdXN0
+      ZXItbG9nZ2luZy1zaWduZXIwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoIC
+      AQDHZj69juii3jQ3wUgWaF5TWpt5uqlQ0PnkZoiPGc+ztLU4k7Iz/lE1KJXEjaUv
+      loymcW+AZ6c3DUIaVTnkQ7NgTBveJfAy6lMcEWYADT5N5EqxdJVBXd/90vKzJay7
+      rxQn4zdp4bqGG7VGOEFDvqtBpoVKMxx8oRZ6uO8qLhg9/SPp7YFChVUtCh2z5P3I
+      jnGUQfYsm2GLnFtJwImYmPH5YmJA37LYpQjjEGXtbZosw87A/IS51RBCaHYswexl
+      4FQPrHzYmicEafyMSYXPNuo+UIKJwfPrTeZ/tCZoo3RSo1k380fPsoIxoHSOA1q3
+      Rly4NANUi54aY46RfMKNmRI5W41vsRw8Un2MtSLTPafeA9KCI+YK4qqqH9HjBWpz
+      sqU0OOZMXzOTFEfuud40iStnHMg34TOHCLVZEjzwNq/y8T9LZwkmIzFFqSPYc/1c
+      woITN+nKOMS2DtGrcdKofFm767P2+t7nk5mOZE007apNAeKuFsgxM8MOiO3WfAA7
+      fb3j1XbSctZ5Twv/xCTysj22lXSJbghxHX44g+RQlgIA4d7B9MpuvlGL+VQnMWmU
+      AsVCtzjiRdRggfA8ixr1to6cgFAomAX+dyGMRIpz6EjobHa2o9i5GnX+tLA1SvTH
+      vndITX+buN4azHx6E5zJgwTAV4zC/D03RFWjGLS+JYZsRQIDAQABo1AwTjAdBgNV
+      HQ4EFgQUjpCLv0te+yB7Q5XCpHQqhu9vBn0wHwYDVR0jBBgwFoAUjpCLv0te+yB7
+      Q5XCpHQqhu9vBn0wDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAgEArJbT
+      YbB4Q/RD+Z5e0G3TVRGzvCtc2Y3ETvIirUYJuziEO7aS66BLlyo+TOAgZw8LfFYt
+      9/UO5Gd0pPVNgwZ/A9Zckw2BJX9CG5XbL1ZirQ8/8iwPhi1aEyWnqUeFyojqIQb0
+      qJQYEz9SZkradfd7Za+7b4mwQ0GFDEr5URMaFCrode7OXu8OMfGkVcVl14UzRkQv
+      9QTD9omTzxbP5UZwGMOcnQiPVb4p0GHXmUmdO4crnuyzt5S1pDhmYXe9ozgmZny9
+      qdX7L70odLRNz3Wl99iszm1mGYH9YzVYJwwQ3dGlNF9rr8uC87lSlWS7kXnZmwbV
+      IBceWdOPm3aoISGygGW5ejvGSJmnv5iLRZfHmEkQAsCNDF4lxSkMprU8lBeeXRuP
+      zDjPsbfnV/+REVhoYCaI12mD+8Np+iEw+/zrI0zIqfo/36EsLg4UMaVcB3lBCgQ7
+      7uIv8JLUO0Vj0y/E1OSfA00VPAvUQWYg7oh4+pR+DuV81qPtOg7yT8fS7Yw5GJ4l
+      JoWbYDKv0TUo9USUz8SAXCGBmy1oLxhZ5JAtMzUzDkYdWzDUYshm5vWxyRi59IZ0
+      5UyK8k0G44OVd0ILrOsjSlO5IsQ8PvVJOUgNbX9AvB0/tacK7sUprj0mvc1OfTQg
+      9Vx33p+p9uZywoJgtDqNC+VMn+EKHdMaLD1d7Bc=
+      -----END CERTIFICATE-----
